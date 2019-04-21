@@ -10,6 +10,14 @@
   </head>
 
   <body>
+    <div>
+      <% if current_user %>
+        <p>Hello <%= current_user.username %></p>
+        <p><%= link_to 'Sign out', destroy_user_session_path, method: :delete %></p>
+      <% else %>
+        <p><%= link_to 'Sign in', new_user_session_path %></p>
+      <% end %>
+    </div>
     <%= yield %>
   </body>
 </html>

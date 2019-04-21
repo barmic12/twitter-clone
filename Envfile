@@ -1,0 +1,2 @@
+variable :DATABASE_USERNAME, :string
+variable :DATABASE_PASSWORD, :string

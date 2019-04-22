@@ -15,5 +15,14 @@ RSpec.describe Comment, type: :model do
   describe 'ActiveRecord associations' do
     it { expect(comment).to belong_to(:user) }
     it { expect(comment).to belong_to(:post) }
+    it { expect(comment).to have_many(:likes) }
+  end
+
+  describe '#destroy' do
+    it 'deletes releated likes' do
+      like = create(:like, :comment)
+      comment_to_destroy = like.likeable
+      expect{ comment_to_destroy.destroy }.to change { Like.count }.by(-1)
+    end
   end
 end

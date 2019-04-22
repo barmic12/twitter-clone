@@ -19,4 +19,12 @@ RSpec.describe Post, type: :model do
     it { expect(post).to have_many(:comments) }
     it { expect(post).to have_many(:likes) }
   end
+
+  describe '#destroy' do
+    it 'deletes releated likes' do
+      like = create(:like, :post)
+      post_to_destroy = like.likeable
+      expect{ post_to_destroy.destroy }.to change { Like.count }.by(-1)
+    end
+  end
 end

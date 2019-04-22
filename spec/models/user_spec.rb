@@ -14,6 +14,8 @@ RSpec.describe User, type: :model do
   end
 
   describe 'ActiveRecord associations' do
-    it {expect(user).to have_many(:posts) }
+    it { expect(user).to have_many(:posts) }
+    it { expect(user).to have_many(:followers).through(:follower_relationships) }
+    it { expect(user).to have_many(:following).through(:following_relationships) }
   end
 end

@@ -12,4 +12,8 @@ RSpec.describe User, type: :model do
     it { expect(user).to validate_presence_of(:email) }
     it { expect(user).to validate_presence_of(:username) }
   end
+
+  describe 'ActiveRecord associations' do
+    it {expect(user).to have_many(:posts) }
+  end
 end

@@ -27,4 +27,22 @@ RSpec.describe Post, type: :model do
       expect{ post_to_destroy.destroy }.to change { Like.count }.by(-1)
     end
   end
+
+  describe 'Scopes' do
+    describe 'subscribed' do
+      let(:user) { create(:user) }
+      before do
+        following1 = create(:user)
+        following2 = create(:user)
+        create(:follow, follower: user, following: following1)
+        create(:follow, follower: user, following: following2)
+        create(:post, user: following1)
+        create(:post, user: following2)
+      end
+      it 'returns 2 posts' do
+        subscribed_users_ids = user.following.ids
+        expect(Post.subscribed(subscribed_users_ids).count).to eq(2)
+      end
+    end
+  end
 end

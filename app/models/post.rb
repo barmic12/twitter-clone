@@ -5,4 +5,6 @@ class Post < ApplicationRecord
 
   validates :body, presence: true
   validates :body, length: { in: 3..500 }
+
+  scope :subscribed, ->(following) { where user_id: following}
 end

@@ -12,6 +12,12 @@ ApplicationRecord.transaction do
                   email: Faker::Internet.email,
                   password: Faker::Internet.password))
   end
+  # Using ENV insetad Envied because of there was a problem with requiring Envied
+  users.push(
+    User.create(username: ENV['ADMIN_USERNAME'],
+                email: ENV['ADMIN_EMAIL'],
+                password: ENV['ADMIN_PASSWORD'])
+  )
   users.each do |user|
     possible_users_to_following = users - [user]
     number_users_to_following = rand(max_number_of_following)

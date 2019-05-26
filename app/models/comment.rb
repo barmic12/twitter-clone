@@ -4,4 +4,6 @@ class Comment < ApplicationRecord
   has_many :likes, as: :likeable, dependent: :destroy
 
   validates :body, length: { in: 3..300 }
+
+  acts_as_taggable
 end

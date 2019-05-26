@@ -1,7 +1,7 @@
-<% @posts.each do |post| %>
-  <div class="post-container">
-    <p><%= post.created_at %></p>
-    <p><%= post.user.username %> wrote: </p>
-    <p><%= post.body %></p>
+<div class="container-fluid">
+  <div class="offset-md-4 col-md-4">
+  <% @posts.each do |post| %>
+    <%= render partial: 'post', locals: { post: post } %>
+  <% end %>
   </div>
-<% end %>
+</div>

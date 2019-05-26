@@ -7,6 +7,7 @@ class FeedsController < ApplicationController
 
   def tag
     @tag_name = params[:tag_name]
+    @number_of_tagged_posts = ActsAsTaggableOn::Tag.find_by(name: @tag_name).taggings_count
     @tagged_posts = Post.tagged_with(@tag_name).limit(10)
   end
 end

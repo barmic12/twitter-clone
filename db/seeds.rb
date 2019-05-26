@@ -6,6 +6,7 @@ ApplicationRecord.transaction do
   number_of_tags = 100
   max_number_of_tags_per_post = 5
   tag_list = Faker::Lorem.words(number_of_tags)
+  max_number_of_following = 5
 
   users = []
   number_of_users.times do
@@ -13,6 +14,15 @@ ApplicationRecord.transaction do
       User.create(username: Faker::Internet.username,
                   email: Faker::Internet.email,
                   password: Faker::Internet.password))
+  end
+  users.each do |user|
+    possible_users_to_following = users - [user]
+    number_users_to_following = rand(max_number_of_following)
+    users_to_following = possible_users_to_following
+                         .sample(1 + rand(number_users_to_following))
+    users_to_following.each do |following|
+      Follow.create(follower: user, following: following)
+    end
   end
   number_of_posts.times do
     post_author = users[rand(number_of_users - 1)]

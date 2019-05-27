@@ -1,0 +1,14 @@
+<div class="container-fluid">
+  <div class="offset-md-4 col-md-4">
+    <h1 class="text-center"><%= "##{@tag_name}" %>
+    <span style="color: grey" class="tiny-text">Posts: <%= @number_of_tagged_posts %></h1>
+    <h3 class="text-center">10 most recent posts: </h3>
+    <% if @tagged_posts.any? %>
+    <% @tagged_posts.each do |post| %>
+      <%= render partial: 'post', locals: { post: post } %>
+    <% end %>
+    <% else %>
+      <p>No results!</p>
+    <% end %>
+  </div>
+</div>

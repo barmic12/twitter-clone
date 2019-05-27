@@ -1,6 +1,7 @@
 source 'https://rubygems.org'
 
 ruby '2.6.2'
+gem 'acts-as-taggable-array-on'
 gem 'bootsnap', '>= 1.1.0', require: false
 gem 'bootstrap', '~> 4.3.1'
 gem 'devise'

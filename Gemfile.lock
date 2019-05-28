@@ -70,6 +70,8 @@ GEM
     concurrent-ruby (1.1.5)
     crass (1.0.4)
     database_cleaner (1.7.0)
+    ddtrace (0.24.0)
+      msgpack
     descendants_tracker (0.0.4)
       thread_safe (~> 0.3, >= 0.3.1)
     devise (4.6.2)
@@ -251,6 +253,7 @@ DEPENDENCIES
   byebug
   capybara
   database_cleaner
+  ddtrace
   devise
   dotenv-rails
   envied

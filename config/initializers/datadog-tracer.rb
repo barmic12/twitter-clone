@@ -2,5 +2,5 @@
 
 Datadog.configure do |c|
   c.use :rails, service_name: 'my-rails-app'
-  c.tracer env: 'master', analytics_enabled: true
+  c.tracer env: 'acts-as-taggable-on', analytics_enabled: true
 end

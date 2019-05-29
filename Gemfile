@@ -1,6 +1,7 @@
 source 'https://rubygems.org'
 
 ruby '2.6.2'
+gem 'activerecord-import'
 gem 'bootsnap', '>= 1.1.0', require: false
 gem 'bootstrap', '~> 4.3.1'
 gem 'ddtrace'

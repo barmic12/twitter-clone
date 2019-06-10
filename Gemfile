@@ -1,3 +1,4 @@
+
 source 'https://rubygems.org'
 
 ruby '2.6.2'
@@ -11,6 +12,7 @@ gem 'envied'
 gem "font-awesome-rails"
 gem 'high_voltage', '~> 3.1'
 gem 'jquery-rails'
+gem 'newrelic_rpm'
 gem 'pg', '>= 0.18', '< 2.0'
 gem 'puma', '~> 3.11'
 gem 'rails', '5.2.3'

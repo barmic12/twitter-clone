@@ -3,3 +3,4 @@ variable :DATABASE_PASSWORD, :string
 variable :ADMIN_USERNAME, :string
 variable :ADMIN_EMAIL, :string
 variable :ADMIN_PASSWORD, :string
+variable :NEW_RELIC_KEY, :string

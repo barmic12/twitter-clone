@@ -1,7 +1,10 @@
+
 source 'https://rubygems.org'
 
 ruby '2.6.2'
+
 gem 'acts-as-taggable-on', '~> 6.0'
+gem 'activerecord-import'
 gem 'bootsnap', '>= 1.1.0', require: false
 gem 'bootstrap', '~> 4.3.1'
 gem 'ddtrace'
@@ -11,6 +14,7 @@ gem 'envied'
 gem "font-awesome-rails"
 gem 'high_voltage', '~> 3.1'
 gem 'jquery-rails'
+gem 'newrelic_rpm'
 gem 'pg', '>= 0.18', '< 2.0'
 gem 'puma', '~> 3.11'
 gem 'rails', '5.2.3'

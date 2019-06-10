@@ -1,0 +1,22 @@
+common: &default_settings
+  # Required license key associated with your New Relic account.
+  license_key: <%= ENVied.NEW_RELIC_KEY %>
+
+  app_name: Twitter-clone acts-as-taggable-on
+
+  log_level: info
+
+development:
+  <<: *default_settings
+  app_name: Twitter-clone acts-as-taggable-on (Development)
+
+test:
+  <<: *default_settings
+  monitor_mode: false
+
+staging:
+  <<: *default_settings
+  app_name: Twitter-clone acts-as-taggable-on (Staging)
+
+production:
+  <<: *default_settings

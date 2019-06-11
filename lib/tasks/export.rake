@@ -1,3 +1,4 @@
+require 'csv'
 namespace :export do
   desc 'Export users'
   task :users, [:number] => [:environment] do |task, args|

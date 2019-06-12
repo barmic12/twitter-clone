@@ -1,0 +1,23 @@
+<div class="container">
+  <h1>Users</h1>
+  <table class="table">
+    <thead>
+      <tr>
+        <th><%= sort_link(@q, :username, 'Name', default_order: :desc) %></th>
+        <th>Email</th>
+        <th><%= sort_link(@q, :created_at, 'Created at', default_order: :desc) %></th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @users.each do |user| %>
+        <tr>
+          <td><%= user.username %></td>
+          <td><%= user.email %></td>
+          <td><%= user.created_at %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+
+  <%= will_paginate %>
+</div>

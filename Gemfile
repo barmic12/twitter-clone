@@ -5,7 +5,6 @@ ruby '2.6.2'
 gem 'activerecord-import'
 gem 'bootsnap', '>= 1.1.0', require: false
 gem 'bootstrap', '~> 4.3.1'
-gem 'ddtrace'
 gem 'devise'
 gem 'dotenv-rails'
 gem 'envied'
@@ -16,10 +15,12 @@ gem 'newrelic_rpm'
 gem 'pg', '>= 0.18', '< 2.0'
 gem 'puma', '~> 3.11'
 gem 'rails', '5.2.3'
+gem 'ransack'
 gem 'ruby-jmeter'
 gem 'sass-rails', '~> 5.0'
 gem 'turbolinks'
 gem 'uglifier', '>= 1.3.0'
+gem 'will_paginate', '~> 3.1.0'
 group :test do
   gem "capybara"
   gem "database_cleaner"

@@ -2,7 +2,7 @@
   <div class="card-body">
     <div class="row">
       <div class="col-md-7">
-        <p><strong><%= post.user.username %> wrote: </strong></p>
+        <p><strong><%= post.id %>    <%= post.user.username %> wrote: </strong></p>
       </div>
       <div class="col-md-5">
         <p><%= post.created_at %></p>
@@ -11,10 +11,10 @@
     <p><%= post.body %></p>
     <div class="row">
       <div class="col-md-1">
-        <i class="fa fa-comments"> <%= post.comments.count %></i>
+        <i class="fa fa-comments"> <%= @comments_by_post[post.id] %></i>
       </div>
       <div class="col-md-1">
-        <i class="fa fa-heart"> <%= post.likes.count %></i>
+        <i class="fa fa-heart"> <%= @likes_by_post[post.id] %></i>
       </div>
     </div>
   </div>

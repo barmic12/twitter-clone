@@ -1,0 +1,17 @@
+default: &default
+  adapter: postgresql
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  timeout: 5000
+  username: <%= ENVied.DATABASE_USERNAME %>
+  password: <%= ENVied.DATABASE_PASSWORD %>
+
+development:
+  <<: *default
+  database: <%= ENVied.DATABASE_DEVELOPMENT_NAME %>
+
+test:
+  <<: *default
+  database: <%= ENVied.DATABASE_TEST_NAME %>
+production:
+  <<: *default
+  database: <%= ENVied.DATABASE_PRODUCTION_NAME %>

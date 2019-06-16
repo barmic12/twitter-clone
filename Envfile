@@ -1,5 +1,8 @@
 variable :DATABASE_USERNAME, :string
 variable :DATABASE_PASSWORD, :string
+variable :DATABASE_DEVELOPMENT_NAME, :string
+variable :DATABASE_TEST_NAME, :string
+variable :DATABASE_PRODUCTION_NAME, :string
 variable :ADMIN_USERNAME, :string
 variable :ADMIN_EMAIL, :string
 variable :ADMIN_PASSWORD, :string

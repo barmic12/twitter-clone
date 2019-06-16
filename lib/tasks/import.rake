@@ -1,8 +1,9 @@
 require 'csv'
 namespace :import do
+  IMPORT_PATH = Rails.root.join('lib','tasks', 'mockup')
   desc 'Import users'
   task users: :environment do
-    csv_text = File.read('users.csv')
+    csv_text = File.read(IMPORT_PATH + 'users.csv')
     csv = CSV.parse(csv_text)
     users = []
     csv.each do |row|
@@ -14,7 +15,7 @@ namespace :import do
 
   desc 'Import posts'
   task posts: :environment do
-    csv_text = File.read('posts.csv')
+    csv_text = File.read((IMPORT_PATH + 'posts.csv'))
     csv = CSV.parse(csv_text)
     items = []
     csv.each do |row|
@@ -27,7 +28,7 @@ namespace :import do
 
   desc 'Import tags'
   task tags: :environment do
-    csv_text = File.read('tags.csv')
+    csv_text = File.read(IMPORT_PATH + 'tags.csv')
     csv = CSV.parse(csv_text)
     tags = []
     csv.each do |row|
@@ -39,18 +40,18 @@ namespace :import do
 
   desc 'Import taggings'
   task taggings: :environment do
-    csv_text = File.read('taggings.csv')
+    csv_text = File.read(IMPORT_PATH + 'taggings.csv')
     csv = CSV.parse(csv_text)
     csv.each do |row|
       tagging = ActsAsTaggableOn::Tagging.new(tag_id: row[0], taggable_type: row[1],
-                                          taggable_id: row[2], context: row[3])
+                                              taggable_id: row[2], context: row[3])
       tagging.save
     end
   end
 
   desc 'Import followers'
   task followers: :environment do
-    csv_text = File.read('followers.csv')
+    csv_text = File.read((IMPORT_PATH + 'followers.csv'))
     csv = CSV.parse(csv_text)
     items = []
     csv.each do |row|
@@ -62,7 +63,7 @@ namespace :import do
 
   desc 'Import comments'
   task comments: :environment do
-    csv_text = File.read('comments.csv')
+    csv_text = File.read(IMPORT_PATH + 'comments.csv')
     csv = CSV.parse(csv_text)
     items = []
     csv.each do |csv|
@@ -73,7 +74,7 @@ namespace :import do
 
   desc 'Import likes'
   task likes: :environment do
-    csv_text = File.read('likes.csv')
+    csv_text = File.read(IMPORT_PATH + 'likes.csv')
     csv = CSV.parse(csv_text)
     items = []
     csv.each do |row|

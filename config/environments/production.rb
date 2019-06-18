@@ -59,10 +59,9 @@ Rails.application.configure do
 
   # Use a different cache store in production.
   config.cache_store = :redis_store, {
-    host: "localhost",
+    host: 'localhost',
     port: 6379,
-    db: 0,
-    namespace: "rails-cache"
+    db: 0
   }, {
     expires_in: 90.minutes
   }

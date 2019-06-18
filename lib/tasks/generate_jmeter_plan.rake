@@ -20,7 +20,7 @@ def generate_report(url, email, password, count)
   uri = URI(url)
   domain, port = uri.host, uri.port
   test do
-    threads count: count, duration: 30 do
+    threads count: count, rampup: 60, loops: 1, duration: 30 do
       defaults domain: domain, port: port
       cookies policy: 'rfc2109', clear_each_iteration: true
 

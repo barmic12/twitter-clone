@@ -7,7 +7,27 @@
       <%= sort_link(@q, :created_at, 'Created at') %>
     </div>
     <% @posts.each do |post| %>
-      <%= render partial: 'post', locals: { post: post } %>
+      <div class="card post-container" style="margin-bottom:10px;">
+        <div class="card-body">
+          <div class="row">
+            <div class="col-md-7">
+              <p><strong><%= post.id %>    <%= post.user.username %> wrote: </strong></p>
+            </div>
+            <div class="col-md-5">
+              <p><%= post.created_at %></p>
+            </div>
+          </div>
+          <p><%= post.body %></p>
+          <div class="row">
+            <div class="col-md-1">
+              <i class="fa fa-comments"> <%= @comments_by_post[post.id] %></i>
+            </div>
+            <div class="col-md-1">
+              <i class="fa fa-heart"> <%= @likes_by_post[post.id] %></i>
+            </div>
+          </div>
+        </div>
+      </div>
     <% end %>
   </div>
 </div>

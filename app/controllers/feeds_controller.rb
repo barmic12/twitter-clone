@@ -20,5 +20,7 @@ class FeedsController < ApplicationController
     @likes_by_post = Rails.cache.fetch('likes_by_post') do
       @posts.where(id: @posts.ids).joins(:likes).group('likes.likeable_id').count
     end
+
+    fresh_when @posts_arr
   end
 end
